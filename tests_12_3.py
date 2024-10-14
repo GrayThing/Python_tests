@@ -57,22 +57,22 @@ class Tournament:
 class RunnerTest(unittest.TestCase):
     @unittest.skipIf(Runner.is_frozen, 'Тесты в этом кейсе заморожены')
     def test_walk(self):
-        test_runner = Runner('Joe')
+        test_runner = Runner('Joe', 5)
         for i in range(10):
             test_runner.walk()
         self.assertEqual(test_runner.distance, 50)
 
     @unittest.skipIf(Runner.is_frozen, 'Тесты в этом кейсе заморожены')
     def test_run(self):
-        test_runner = Runner('Joe')
+        test_runner = Runner('Joe', 5)
         for i in range(10):
             test_runner.run()
         self.assertEqual(test_runner.distance, 100)
 
     @unittest.skipIf(Runner.is_frozen, 'Тесты в этом кейсе заморожены')
     def test_challenge(self):
-        walk_test_runner = Runner('Joe')
-        run_test_runner = Runner('Josh')
+        walk_test_runner = Runner('Joe', 5)
+        run_test_runner = Runner('Josh', 5)
         for i in range(10):
             walk_test_runner.walk()
             run_test_runner.run()
